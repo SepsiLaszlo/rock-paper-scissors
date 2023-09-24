@@ -1,2 +1,38 @@
-<h1>Game#home</h1>
-<p>Find me in app/views/game/home.html.erb</p>
+<h1 id="title">ROCK – PAPER – SCISSORS</h1>
+<p id="description">Rock Paper Scissors is a zero sum game that is usually played by two people using their hands and no
+  tools. The idea
+  is to make shapes with an outstretched hand where each shape will have a certain degree of power and will lead to an
+  outcome.</p>
+<h2 id="prompt">SELECT YOUR BET</h2>
+<div id="tool-grid">
+  <% @tools.each do |tool| %>
+    <div class="tool-option" onclick="<%= "chooseTool('#{tool.name}')" %>">
+      <%= image_tag tool.image.variable? ? tool.image.variant(:thumb) : tool.image.url, id: "#{tool.name}-image" %>
+      <span class="name"><%= tool.name.capitalize %></span>
+    </div>
+  <% end %>
+</div>
+
+<div id="backdrop" class="hidden" onclick="closePopup()"></div>
+<div id="popup" class="hidden">
+  <span id="header">
+    WAITING CURB’S CHOOSE
+  </span>
+  <div id=popup-grid>
+    <%= image_tag Tool.first.image.url, id: 'your-choice' %>
+    <%#= image_tag 'loader.svg', id: 'loader-img' %>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 10">
+      <defs>
+        <style>.a,.b,.c{fill:#36006c;}.b{opacity:0.54;}.c{opacity:0.12;}</style>
+      </defs>
+      <g transform="translate(-857 -454)">
+        <circle class="a" cx="5" cy="5" r="5" transform="translate(857 454)"/>
+        <circle class="b" cx="5" cy="5" r="5" transform="translate(884 454)"/>
+        <circle class="c" cx="5" cy="5" r="5" transform="translate(911 454)"/>
+      </g>
+    </svg>
+    <span id="your-bet">Your bet</span>
+    <%= image_tag 'curb_logo.png', id: 'curb-logo' %>
+  </div>
+  <%= image_tag 'close.png', id: 'close', onclick: "closePopup()" %>
+</div>

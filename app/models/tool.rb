@@ -4,7 +4,9 @@ class Tool < ApplicationRecord
                           join_table: 'which_tool_beats_whats',
                           foreign_key: "tool_that_beats_id",
                           association_foreign_key: "tool_that_is_beaten_id"
-
+  has_one_attached :image do |attachable|
+    attachable.variant :thumb, resize_to_fit: [139, 139]
+  end
   def beats?(other_tool)
     tools_that_this_can_beat.include?(other_tool)
   end

@@ -1,5 +1,6 @@
 class GameController < ApplicationController
   def home
+    @tools = Tool.all
   end
 
   def throw
