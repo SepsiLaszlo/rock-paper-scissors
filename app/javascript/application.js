@@ -20,9 +20,16 @@ window.closePopup = function (){
     backdrop.classList.add("hidden")
 }
 
+window.closeResult = function (){
+    const backdrop = document.getElementById("backdrop")
+    const result = document.getElementById("result")
+    result.classList.add("hidden")
+    backdrop.classList.add("hidden")
+}
 window.addEventListener('keydown', event =>{
     if(event.key == 'Escape'){
         closePopup()
+        closeResult()
     }
 })
 

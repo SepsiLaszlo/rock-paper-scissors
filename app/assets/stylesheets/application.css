@@ -24,7 +24,7 @@ main {
     padding: 0 10px;
 }
 
-#title {
+#page-title {
     text-align: center;
     font: normal 50px/61px Montserrat;
     letter-spacing: 0px;
@@ -168,7 +168,7 @@ main {
 
 .a {
     animation-name: loading;
-    animation-delay:  -0.66s;
+    animation-delay: -0.66s;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -177,7 +177,7 @@ main {
 
 .b {
     animation-name: loading;
-    animation-delay:  -0.33s;
+    animation-delay: -0.33s;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -190,7 +190,78 @@ main {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
 @keyframes loading {
-    from {opacity: 1;}
-    to {opacity: 0.12;}
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.12;
+    }
+}
+
+#result {
+    position: fixed;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 40px #0000001A;
+    border-radius: 5px;
+    opacity: 1;
+    max-width: 879px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 81px 40px;
+}
+
+#result #title {
+    font: normal 32px/39px Montserrat;
+    letter-spacing: 0px;
+    color: #36006C;
+    opacity: 1;
+}
+
+#result #details {
+    font: normal normal 300 21px/32px Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 0.54;
+}
+
+#result #curbs-choice {
+    max-width: 161px;
+    max-height: 161px;
+}
+
+#result #ok {
+    background: #36006C 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    opacity: 1;
+    font: normal 32px/39px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    border: none;
+    padding: 17px;
+    width: 100%;
+}
+
+#result #ok:hover {
+    cursor: pointer;
+}
+
+#result #panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+#result #close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+#result #close:hover {
+    cursor: pointer;
 }
