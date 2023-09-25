@@ -12,6 +12,8 @@ services:
       - postgres
     networks:
       - rock_paper_scissors_network
+    volumes:
+      - rock_paper_scissors_storage:/kbpr-web/storage/
   postgres:
     image: postgres:15.3
     restart: always
@@ -28,4 +30,6 @@ networks:
   rock_paper_scissors_network:
 volumes:
   rock_paper_scissors_db:
+    external: true
+  rock_paper_scissors_storage:
     external: true
