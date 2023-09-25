@@ -1,11 +1,12 @@
 # README
 
-The projects aims to implement a simple cache service
-for [The Movie Database search API](https://developer.themoviedb.org/reference/search-movie), with a minimalist UI.
+The projects provides an extendable implementation for the rock, paper, scissors game.
 
 ## Features
 
-- A basic rock, paper, scissors game with a nice UI
+- A rock, paper, scissors game with a nice UI
+- Admins can manage tools on `/tools` endpoint
+- RSpec tests
 - Create Docker, docker-compose and nginx config to deploy the application to www.rock-paper-scissors.kir-dev.sch.bme.hu
 
 
