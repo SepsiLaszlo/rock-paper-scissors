@@ -6,7 +6,7 @@
   <% @tools.each do |tool| %>
     <%= render tool %>
     <p>
-      <%= link_to "Show this tool", tool %>
+      <%= link_to "Edit this tool", edit_tool_path(tool) %>
     </p>
   <% end %>
 </div>

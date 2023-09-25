@@ -1,10 +1,23 @@
 <h1>Editing tool</h1>
 
 <%= render "form", tool: @tool %>
+<label>This tool beats</label>
+<div id="tool-grid">
+  <% @other_tools.each do |tool| %>
+    <div class="tool-option" data-controller="tool"
+         data-tool-current-tool-id-value="<%= @tool.id %>"
+         data-tool-selected-tool-id-value="<%= tool.id %>"
+         data-tool-selected-value="<%= @tool.beats?(tool) %>"
+         data-tool-target="element"
+         data-action="click->tool#togleSelecetdState">
+      <%= image_tag tool.image.variable? ? tool.image.variant(:thumb) : tool.image.url, id: "#{tool.name}-image" %>
+      <span class="name"><%= tool.name.capitalize %></span>
+    </div>
+  <% end %>
+</div>
 
 <br>
 
 <div>
-  <%= link_to "Show this tool", @tool %> |
   <%= link_to "Back to tools", tools_path %>
 </div>

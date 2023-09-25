@@ -55,6 +55,7 @@ main {
 #tool-grid {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
+    gap:5px
 }
 
 #tool-grid .tool-option {
@@ -73,8 +74,8 @@ main {
 }
 
 #tool-grid .tool-option img {
-    max-width: 139px;
-    max-height: 139px;
+    width: 139px;
+    height: 139px;
 }
 
 #tool-grid .tool-option .name {
@@ -275,4 +276,8 @@ main {
 
 #result #close:hover {
     cursor: pointer;
+}
+
+.selected {
+    border: 10px red solid;
 }

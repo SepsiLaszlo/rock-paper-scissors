@@ -7,7 +7,7 @@
 <div id="tool-grid">
   <% @tools.each do |tool| %>
     <div class="tool-option" onclick="<%= "chooseTool('#{tool.name}')" %>">
-      <%= image_tag tool.image.variable? ? tool.image.variant(:thumb) : tool.image.url, id: "#{tool.name}-image" %>
+      <%= image_tag tool.image.variable? ? tool.image.variant(:thumb) : tool.image, id: "#{tool.name}-image" %>
       <span class="name"><%= tool.name.capitalize %></span>
     </div>
   <% end %>
