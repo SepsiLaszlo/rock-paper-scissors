@@ -13,7 +13,7 @@
   <% end %>
 </div>
 
-<div id="backdrop" class="hidden" onclick="closePopup()"></div>
+<div id="backdrop" class="hidden" onclick="closePopups()"></div>
 <div id="popup" class="hidden">
   <span id="header">
     WAITING CURB’S CHOOSE
@@ -47,10 +47,10 @@
   <%= image_tag 'close.png', id: 'close', onclick: "closePopup()" %>
 </div>
 
-<div id="result">
+<div id="result" class="hidden">
   <div id="panel">
-    <span id="title">You lost!</span>
-    <span id="details">Curb with paper wins</span>
+    <span id="result-title">You lost!</span>
+    <span id="result-details">Curb with paper wins</span>
     <%= image_tag Tool.first.image.url, id: 'curbs-choice' %>
     <button id="ok" onclick="closeResult()">Ok</button>
   </div>

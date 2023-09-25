@@ -94,8 +94,10 @@ main {
     max-width: 879px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 81px 40px;
+    transform: translate(calc(-50% - 10px), -50%);
+    width: calc(100% - 60px);
+    margin: 10px;
+    padding: 40px 20px;
 }
 
 #popup #header {
@@ -109,6 +111,11 @@ main {
 #popup img {
     max-width: 139px;
     max-height: 139px;
+
+}
+
+#popup svg {
+    max-width: 150px;
 }
 
 #popup #loader-img {
@@ -209,18 +216,21 @@ main {
     max-width: 879px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 81px 40px;
+    transform: translate(calc(-50% - 10px), -50%);
+    width: calc(100% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
-#result #title {
+#result #result-title {
     font: normal 32px/39px Montserrat;
     letter-spacing: 0px;
     color: #36006C;
     opacity: 1;
 }
 
-#result #details {
+#result #result-details {
     font: normal normal 300 21px/32px Roboto;
     letter-spacing: 0px;
     color: #000000;
@@ -230,6 +240,7 @@ main {
 #result #curbs-choice {
     max-width: 161px;
     max-height: 161px;
+    padding: 75px 0;
 }
 
 #result #ok {
