@@ -17,6 +17,7 @@ for [The Movie Database search API](https://developer.themoviedb.org/reference/s
 
 ```bash
 docker volume create rock_paper_scissors_db
+docker volume create rock_paper_scissors_storage
 ```
 
 3. Set up the `.posgtres_password` file. Copy the the `.postgres_password.example` file into `.postgres_password`. Then
