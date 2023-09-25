@@ -82,5 +82,6 @@ test:
 production:
   <<: *default
   database: rock_paper_scissors_production
-  username: rock_paper_scissors
-  password: <%= ENV["ROCK_PAPER_SCISSORS_DATABASE_PASSWORD"] %>
+  host: postgres
+  username: admin
+  password: <%= Rails.application.credentials.postgres_password %>

@@ -1,0 +1,31 @@
+version: "3"
+services:
+  web:
+    build: .
+    restart: always
+    ports:
+      - 3005:3000
+    environment:
+      - RAILS_ENV=production
+      - RAILS_SERVE_STATIC_FILES=true
+    depends_on:
+      - postgres
+    networks:
+      - rock_paper_scissors_network
+  postgres:
+    image: postgres:15.3
+    restart: always
+    volumes:
+      - rock_paper_scissors_db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=admin
+    env_file:
+      - .postgres_password
+    networks:
+      - rock_paper_scissors_network
+
+networks:
+  rock_paper_scissors_network:
+volumes:
+  rock_paper_scissors_db:
+    external: true
