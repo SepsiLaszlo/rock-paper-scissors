@@ -15,12 +15,12 @@
 
 <div id="backdrop" class="hidden" onclick="closePopups()"></div>
 <div id="popup" class="hidden">
-  <span id="header">
+
+  <div id="header">
     WAITING CURB’S CHOOSE
-  </span>
+  </div>
   <div id=popup-grid>
-    <%= image_tag Tool.first.image.url, id: 'your-choice' %>
-    <%#= image_tag 'loader.svg', id: 'loader-img' %>
+    <%= image_tag '', id: 'your-choice' %>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 10">
       <defs>
         <style>.a, .b, .c {
@@ -51,7 +51,7 @@
   <div id="panel">
     <span id="result-title">You lost!</span>
     <span id="result-details">Curb with paper wins</span>
-    <%= image_tag Tool.first.image.url, id: 'curbs-choice' %>
+    <%= image_tag '', id: 'curbs-choice' %>
     <button id="ok" onclick="closeResult()">Ok</button>
   </div>
   <%= image_tag 'close.png', id: 'close', onclick: "closeResult()" %>

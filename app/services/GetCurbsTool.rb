@@ -14,6 +14,6 @@ class GetCurbsTool
   private
 
   def self.random_tool
-    Tool.order("RANDOM()").limit(1).first
+    Tool.order('RANDOM()').limit(1).first
   end
 end

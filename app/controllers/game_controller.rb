@@ -1,6 +1,6 @@
 class GameController < ApplicationController
   def home
-    @tools = Tool.all
+    @tools = Tool.all.with_attached_image
   end
 
   def throw

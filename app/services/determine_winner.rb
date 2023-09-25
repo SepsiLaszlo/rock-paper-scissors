@@ -12,12 +12,11 @@ class DetermineWinner
 
   def call
     if player_tool.beats?(curb_tool)
-      winner = 'player'
+      'player'
     elsif curb_tool.beats?(player_tool)
-      winner = 'curb'
+      'curb'
     else
-      winner = 'tie'
+      'tie'
     end
-    winner
   end
 end
